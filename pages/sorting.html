@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Sorting Visualizer</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">
+DS MASTER
+</div>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="../pages/linear.html">
+Back
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="section">
+
+<h1>
+SORTING VISUALIZER
+</h1>
+
+<p>
+
+Visualize different sorting algorithms.
+
+</p>
+
+<br>
+
+<input
+id="arrayInput"
+placeholder="50,20,80,10,60">
+
+<br><br>
+
+<button onclick="bubbleSort()">
+Bubble Sort
+</button>
+
+<button onclick="selectionSort()">
+Selection Sort
+</button>
+
+<button onclick="insertionSort()">
+Insertion Sort
+</button>
+
+<button onclick="mergeSortDisplay()">
+Merge Sort
+</button>
+
+<button onclick="quickSortDisplay()">
+Quick Sort
+</button>
+
+<button onclick="resetSorting()">
+Reset
+</button>
+
+<h2 id="message"></h2>
+
+<div
+id="barContainer"
+class="barContainer">
+</div>
+
+</section>
+
+<script src="../js/sorting.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Queue Visualizer</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">
+DS MASTER
+</div>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="linear.html">
+Back
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="section">
+
+<h1>
+QUEUE VISUALIZER
+</h1>
+
+<p>
+
+Queue follows FIFO
+(First In First Out)
+
+</p>
+
+<br>
+
+<input
+type="number"
+id="size"
+placeholder="Queue Size">
+
+<button onclick="createQueue()">
+Create Queue
+</button>
+
+<br><br>
+
+<input
+id="value"
+placeholder="Enter Value">
+
+<br><br>
+
+<button onclick="enqueueElement()">
+Enqueue
+</button>
+
+<button onclick="dequeueElement()">
+Dequeue
+</button>
+
+<button onclick="frontElement()">
+Front
+</button>
+
+<button onclick="rearElement()">
+Rear
+</button>
+
+<button onclick="searchElement()">
+Search
+</button>
+
+<button onclick="resetQueue()">
+Reset
+</button>
+
+<h2 id="message"></h2>
+
+<div
+id="queueContainer"
+class="queueArea">
+</div>
+
+</section>
+
+<script src="../js/queue.js"></script>
+
+</body>
+</html>

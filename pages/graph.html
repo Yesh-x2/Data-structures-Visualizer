@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Graph Visualizer</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">
+DS MASTER
+</div>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="nonlinear.html">
+Back
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="section">
+
+<h1>
+GRAPH VISUALIZER
+</h1>
+
+<p>
+
+Graph consists of Vertices
+and Edges.
+
+</p>
+
+<br>
+
+<input
+id="vertex"
+placeholder="Vertex Name">
+
+<button onclick="addVertex()">
+Add Vertex
+</button>
+
+<br><br>
+
+<input
+id="source"
+placeholder="Source">
+
+<input
+id="destination"
+placeholder="Destination">
+
+<button onclick="addEdge()">
+Add Edge
+</button>
+
+<br><br>
+
+<button onclick="bfsTraversal()">
+BFS
+</button>
+
+<button onclick="dfsTraversal()">
+DFS
+</button>
+
+<button onclick="resetGraph()">
+Reset
+</button>
+
+<h2 id="message"></h2>
+
+<div
+id="vertexContainer"
+class="graphContainer">
+</div>
+
+<div
+id="edgeContainer">
+</div>
+
+</section>
+
+<script src="../js/graph.js"></script>
+
+</body>
+</html>

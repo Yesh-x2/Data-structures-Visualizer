@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Linked List Visualizer</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">
+DS MASTER
+</div>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="linear.html">
+Back
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="section">
+
+<h1>
+LINKED LIST VISUALIZER
+</h1>
+
+<p>
+
+Linked List consists of nodes.
+Each node contains data and a link
+to the next node.
+
+</p>
+
+<br>
+
+<input
+type="number"
+id="size"
+placeholder="List Size">
+
+<button onclick="createList()">
+Create List
+</button>
+
+<br><br>
+
+<input
+id="value"
+placeholder="Enter Value">
+
+<br><br>
+
+<button onclick="insertNode()">
+Insert
+</button>
+
+<button onclick="deleteNode()">
+Delete
+</button>
+
+<button onclick="searchNode()">
+Search
+</button>
+
+<button onclick="resetList()">
+Reset
+</button>
+
+<h2 id="message"></h2>
+
+<div
+id="listContainer"
+class="linkedContainer">
+</div>
+
+</section>
+
+<script src="../js/linkedlist.js"></script>
+
+</body>
+</html>

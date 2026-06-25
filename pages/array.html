@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Array Visualizer</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">
+DS MASTER
+</div>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="linear.html">
+Back
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="section">
+
+<h1>
+ARRAY VISUALIZER
+</h1>
+
+<p>
+
+Array stores elements in
+continuous memory locations.
+
+</p>
+
+<br>
+
+<input
+type="number"
+id="size"
+placeholder="Array Size">
+
+<button onclick="createArray()">
+Create Array
+</button>
+
+<br><br>
+
+<input
+id="value"
+placeholder="Value">
+
+<input
+type="number"
+id="position"
+placeholder="Position">
+
+<br><br>
+
+<button onclick="insertElement()">
+Insert
+</button>
+
+<button onclick="deleteElement()">
+Delete
+</button>
+
+<button onclick="searchElement()">
+Search
+</button>
+
+<button onclick="resetArray()">
+Reset
+</button>
+
+<h2 id="message"></h2>
+
+<div
+id="arrayContainer"
+class="visual">
+</div>
+
+</section>
+
+<script src="../js/array.js"></script>
+
+</body>
+</html>

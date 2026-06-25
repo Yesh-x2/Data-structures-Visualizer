@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stack Visualizer</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">
+DS MASTER
+</div>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="linear.html">
+Back
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="section">
+
+<h1>
+STACK VISUALIZER
+</h1>
+
+<p>
+
+Stack follows the
+Last In First Out (LIFO)
+principle.
+
+</p>
+
+<br>
+
+<input
+type="number"
+id="size"
+placeholder="Stack Size">
+
+<button onclick="createStack()">
+Create Stack
+</button>
+
+<br><br>
+
+<input
+id="value"
+placeholder="Enter Value">
+
+<br><br>
+
+<button onclick="pushElement()">
+Push
+</button>
+
+<button onclick="popElement()">
+Pop
+</button>
+
+<button onclick="peekElement()">
+Peek
+</button>
+
+<button onclick="searchElement()">
+Search
+</button>
+
+<button onclick="resetStack()">
+Reset
+</button>
+
+<h2 id="message"></h2>
+
+<div id="stackContainer"
+class="stackArea">
+</div>
+
+</section>
+
+<script src="../js/stack.js"></script>
+
+</body>
+</html>

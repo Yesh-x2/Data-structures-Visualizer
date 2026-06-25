@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Searching Visualizer</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<nav>
+
+<div class="logo">
+DS MASTER
+</div>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="../pages/linear.html">
+Back
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="section">
+
+<h1>
+SEARCHING VISUALIZER
+</h1>
+
+<p>
+
+Search an element using
+Linear Search or Binary Search
+
+</p>
+
+<br>
+
+<input
+id="arrayInput"
+placeholder="10,20,30,40">
+
+<input
+id="target"
+placeholder="Search Value">
+
+<br><br>
+
+<button onclick="linearSearch()">
+Linear Search
+</button>
+
+<button onclick="binarySearch()">
+Binary Search
+</button>
+
+<button onclick="resetSearch()">
+Reset
+</button>
+
+<h2 id="message"></h2>
+
+<div
+id="searchContainer"
+class="visual">
+</div>
+
+</section>
+
+<script src="../js/searching.js"></script>
+
+</body>
+</html>
