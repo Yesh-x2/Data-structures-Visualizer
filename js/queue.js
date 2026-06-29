@@ -1,234 +1,212 @@
-let queue=[];
+function showSection(id){
 
-let maxSize=0;
+document.querySelectorAll(".queueSection")
+.forEach(section=>{
 
-function createQueue(){
+section.style.display="none";
 
-maxSize=
-parseInt(
-document.getElementById("size").value
-);
+});
 
-if(
-isNaN(maxSize)
-||
-maxSize<=0
-){
-
-showMessage(
-"Enter Valid Size"
-);
-
-return;
+document.getElementById(id)
+.style.display="block";
 
 }
 
-queue=[];
+/* SIMPLE QUEUE */
 
-display();
+let simpleQueue=[];
 
-showMessage(
-"Queue Created 🚀"
-);
-
-}
-
-function enqueueElement(){
-
-if(maxSize===0){
-
-showMessage(
-"Create Queue First"
-);
-
-return;
-
-}
-
-if(queue.length>=maxSize){
-
-showMessage(
-"Queue Overflow ❌"
-);
-
-return;
-
-}
+function enqueueSimple(){
 
 let value=
-document.getElementById("value").value;
+document.getElementById("simpleValue").value;
 
-if(value===""){
+simpleQueue.push(value);
 
-showMessage(
-"Enter Value"
-);
-
-return;
+displaySimple();
 
 }
 
-queue.push(value);
+function dequeueSimple(){
 
-display();
+if(simpleQueue.length>0){
 
-showMessage(
-"Element Enqueued ✅"
-);
+simpleQueue.shift();
 
 }
 
-function dequeueElement(){
-
-if(queue.length===0){
-
-showMessage(
-"Queue Underflow ❌"
-);
-
-return;
+displaySimple();
 
 }
 
-let removed=
-queue.shift();
+function displaySimple(){
 
-display();
+let display=
+document.getElementById("simpleDisplay");
 
-showMessage(
-removed+
-" Removed"
-);
+display.innerHTML="";
 
-}
+simpleQueue.forEach(item=>{
 
-function frontElement(){
-
-if(queue.length===0){
-
-showMessage(
-"Queue Empty"
-);
-
-return;
-
-}
-
-showMessage(
-"Front : "
-+
-queue[0]
-);
-
-}
-
-function rearElement(){
-
-if(queue.length===0){
-
-showMessage(
-"Queue Empty"
-);
-
-return;
-
-}
-
-showMessage(
-"Rear : "
-+
-queue[queue.length-1]
-);
-
-}
-
-function searchElement(){
-
-let value=
-document.getElementById("value").value;
-
-let pos=
-queue.indexOf(value);
-
-if(pos===-1){
-
-showMessage(
-"Element Not Found"
-);
-
-}
-else{
-
-showMessage(
-"Found At Position "
-+
-(pos+1)
-);
-
-}
-
-}
-
-function resetQueue(){
-
-queue=[];
-
-display();
-
-showMessage(
-"Queue Reset 🔄"
-);
-
-}
-
-function display(){
-
-let container=
-document.getElementById(
-"queueContainer"
-);
-
-container.innerHTML="";
-
-queue.forEach(
-(item,index)=>{
-
-let box=
-document.createElement("div");
-
-box.className=
-"queueBox";
-
-if(index===0){
-
-box.classList.add(
-"frontBox"
-);
-
-}
-
-if(index===queue.length-1){
-
-box.classList.add(
-"rearBox"
-);
-
-}
-
-box.innerHTML=item;
-
-container.appendChild(
-box
-);
+display.innerHTML+=
+`<div class="box">${item}</div>`;
 
 });
 
 }
 
-function showMessage(msg){
+/* CIRCULAR QUEUE */
 
-document.getElementById(
-"message"
-).innerHTML=msg;
+let circularQueue=[];
+
+function enqueueCircular(){
+
+let value=
+document.getElementById("circularValue").value;
+
+circularQueue.push(value);
+
+displayCircular();
+
+}
+
+function dequeueCircular(){
+
+if(circularQueue.length>0){
+
+circularQueue.shift();
+
+}
+
+displayCircular();
+
+}
+
+function displayCircular(){
+
+let display=
+document.getElementById("circularDisplay");
+
+display.innerHTML="";
+
+circularQueue.forEach(item=>{
+
+display.innerHTML+=
+`<div class="box">${item}</div>`;
+
+});
+
+}
+
+/* PRIORITY QUEUE */
+
+let priorityQueue=[];
+
+function insertPriority(){
+
+let value=
+document.getElementById("priorityValue").value;
+
+let priority=
+Number(
+document.getElementById("priorityNumber").value
+);
+
+priorityQueue.push({
+value,
+priority
+});
+
+priorityQueue.sort(
+(a,b)=>a.priority-b.priority
+);
+
+displayPriority();
+
+}
+
+function deletePriority(){
+
+priorityQueue.shift();
+
+displayPriority();
+
+}
+
+function displayPriority(){
+
+let display=
+document.getElementById("priorityDisplay");
+
+display.innerHTML="";
+
+priorityQueue.forEach(item=>{
+
+display.innerHTML+=
+
+`<div class="box">
+${item.value}
+(${item.priority})
+</div>`;
+
+});
+
+}
+
+/* DEQUE */
+
+let deque=[];
+
+function insertFront(){
+
+let value=
+document.getElementById("dequeValue").value;
+
+deque.unshift(value);
+
+displayDeque();
+
+}
+
+function insertRear(){
+
+let value=
+document.getElementById("dequeValue").value;
+
+deque.push(value);
+
+displayDeque();
+
+}
+
+function deleteFront(){
+
+deque.shift();
+
+displayDeque();
+
+}
+
+function deleteRear(){
+
+deque.pop();
+
+displayDeque();
+
+}
+
+function displayDeque(){
+
+let display=
+document.getElementById("dequeDisplay");
+
+display.innerHTML="";
+
+deque.forEach(item=>{
+
+display.innerHTML+=
+`<div class="box">${item}</div>`;
+
+});
 
 }

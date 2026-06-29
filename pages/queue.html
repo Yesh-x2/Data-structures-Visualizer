@@ -1,114 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Queue Visualizer</title>
-
-<link rel="stylesheet"
-href="../css/style.css">
-
+    <title>Queue Types</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-<div class="background-animation"></div>
+<div class="section">
 
-<div class="circle c1"></div>
-<div class="circle c2"></div>
-<div class="circle c3"></div>
+    <h1>QUEUE TYPES</h1>
 
-<nav>
+    <div class="cards">
 
-<div class="logo">
-DS MASTER
+        <div class="card" onclick="showSection('simple')">
+            <h2>Simple Queue</h2>
+            <p>FIFO Queue</p>
+        </div>
+
+        <div class="card" onclick="showSection('circular')">
+            <h2>Circular Queue</h2>
+            <p>Circular FIFO Queue</p>
+        </div>
+
+        <div class="card" onclick="showSection('priority')">
+            <h2>Priority Queue</h2>
+            <p>Priority Based Queue</p>
+        </div>
+
+        <div class="card" onclick="showSection('deque')">
+            <h2>Deque</h2>
+            <p>Double Ended Queue</p>
+        </div>
+
+    </div>
+
 </div>
 
-<ul>
+<!-- Simple Queue -->
 
-<li>
-<a href="../index.html">
-Home
-</a>
-</li>
+<div id="simple" class="queueSection">
 
-<li>
-<a href="linear.html">
-Back
-</a>
-</li>
+    <h2>Simple Queue</h2>
 
-</ul>
+    <input id="simpleValue" placeholder="Value">
 
-</nav>
+    <button onclick="enqueueSimple()">Enqueue</button>
+    <button onclick="dequeueSimple()">Dequeue</button>
 
-<section class="section">
+    <div id="simpleDisplay" class="visual"></div>
 
-<h1>
-QUEUE VISUALIZER
-</h1>
-
-<p>
-
-Queue follows FIFO
-(First In First Out)
-
-</p>
-
-<br>
-
-<input
-type="number"
-id="size"
-placeholder="Queue Size">
-
-<button onclick="createQueue()">
-Create Queue
-</button>
-
-<br><br>
-
-<input
-id="value"
-placeholder="Enter Value">
-
-<br><br>
-
-<button onclick="enqueueElement()">
-Enqueue
-</button>
-
-<button onclick="dequeueElement()">
-Dequeue
-</button>
-
-<button onclick="frontElement()">
-Front
-</button>
-
-<button onclick="rearElement()">
-Rear
-</button>
-
-<button onclick="searchElement()">
-Search
-</button>
-
-<button onclick="resetQueue()">
-Reset
-</button>
-
-<h2 id="message"></h2>
-
-<div
-id="queueContainer"
-class="queueArea">
 </div>
 
-</section>
+<!-- Circular Queue -->
+
+<div id="circular" class="queueSection" style="display:none">
+
+    <h2>Circular Queue</h2>
+
+    <input id="circularValue" placeholder="Value">
+
+    <button onclick="enqueueCircular()">Enqueue</button>
+    <button onclick="dequeueCircular()">Dequeue</button>
+
+    <div id="circularDisplay" class="visual"></div>
+
+</div>
+
+<!-- Priority Queue -->
+
+<div id="priority" class="queueSection" style="display:none">
+
+    <h2>Priority Queue</h2>
+
+    <input id="priorityValue" placeholder="Value">
+    <input id="priorityNumber" placeholder="Priority">
+
+    <button onclick="insertPriority()">Insert</button>
+    <button onclick="deletePriority()">Delete</button>
+
+    <div id="priorityDisplay" class="visual"></div>
+
+</div>
+
+<!-- Deque -->
+
+<div id="deque" class="queueSection" style="display:none">
+
+    <h2>Deque</h2>
+
+    <input id="dequeValue" placeholder="Value">
+
+    <button onclick="insertFront()">Insert Front</button>
+    <button onclick="insertRear()">Insert Rear</button>
+
+    <button onclick="deleteFront()">Delete Front</button>
+    <button onclick="deleteRear()">Delete Rear</button>
+
+    <div id="dequeDisplay" class="visual"></div>
+
+</div>
 
 <script src="../js/queue.js"></script>
 
